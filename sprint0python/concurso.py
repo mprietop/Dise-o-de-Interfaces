@@ -3,15 +3,11 @@ print ("a) 24")
 print ("b) 18")
 print ("c) 22")
 op = input("Tu respuesta: ")
-correcta = 'c'
 
-validacion_repuesta(correcta, op)
+while (op != 'a') & (op != 'b') & (op != 'c'):
+    op = input("Tu respuesta (a, b, c): ")
 
-def validacion_repuesta(cor, op):
-    while (o != 'a') & (o != 'b') & (o != 'c'):
-        o = input("Tu respuesta (a, b, c): ")
-        
-    if (o == correcta):
-        print("Respuesta correcta")
-    else:
-        print("Respuesta incorrecta") 
+if (op == 'c'):
+    print("Respuesta correcta")
+else:
+    print("Respuesta incorrecta") 
