@@ -1,5 +1,4 @@
 import gi
-import yes_window
 from yes_window import YesWindow
 from no_window import NoWindow
 #from no_window import N
@@ -35,3 +34,4 @@ class MainWindow(Gtk.Window):
         button_yes.connect("clicked", self.yes_clicked)
         button_no.connect("clicked", self.no_clicked)
         self.add(box)
+        

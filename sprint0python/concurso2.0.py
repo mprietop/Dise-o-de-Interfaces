@@ -3,6 +3,7 @@ puntuacion = 0
 preguntasRespondidas = 0
 numPregunta = 0
 preguntas = [1, 2, 3]
+
 def validacion(puntuacion,correcta):
     op = input("Tu respuesta: ")
     while (op != 'a') & (op != 'b') & (op != 'c'):
@@ -18,7 +19,6 @@ def validacion(puntuacion,correcta):
         
        
 while preguntasRespondidas < 2:
-    print(preguntas)
     numPregunta = preguntas[random.choice(preguntas)] 
     if numPregunta == 1: 
         print ("¿Cuántos jugadores hay en un campo de fútbol?")
