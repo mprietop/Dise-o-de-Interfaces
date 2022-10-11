@@ -25,7 +25,10 @@ class MainWindow ( Gtk.Window ) :
         
         
         image = Gtk.Image()
-
+        image2 = Gtk.Image()
+        image3 = Gtk.Image()
+        image4 = Gtk.Image()
+        image5 = Gtk.Image()
         #Reescalado de las imagenes
         pisxbuf1 = GdkPixbuf.Pixbuf.new_from_file_at_scale("C:/msys64.2/home/mario/Dise-o-de-Interfaces/sprint1gtk/catalog/data/unedited/aspas.jpg", 200, 200, False)
         pisxbuf2 = GdkPixbuf.Pixbuf.new_from_file_at_scale("C:/msys64.2/home/mario/Dise-o-de-Interfaces/sprint1gtk/catalog/data/unedited/gabri veiga.jpg", 200, 200, False)
@@ -37,14 +40,14 @@ class MainWindow ( Gtk.Window ) :
         #Una celda para cada imagen
         image.set_from_pixbuf(pisxbuf1)
         cell_one = Cell("Iago Aspas" , image)
-        image.set_from_pixbuf(pisxbuf2)
-        cell_two = Cell("Gabri Veiga", image)
-        image.set_from_pixbuf(pisxbuf3)
-        cell_three = Cell("Guidetti y Wass" , image)
-        image.set_from_pixbuf(pisxbuf4)
-        cell_four = Cell("Strand Larsen", image)
-        image.set_from_pixbuf(pisxbuf5)
-        cell_five = Cell("Mostovoi", image)
+        image2.set_from_pixbuf(pisxbuf2)
+        cell_two = Cell("Gabri Veiga", image2)
+        image3.set_from_pixbuf(pisxbuf3)
+        cell_three = Cell("Guidetti y Wass" , image3)
+        image4.set_from_pixbuf(pisxbuf4)
+        cell_four = Cell("Strand Larsen", image4)
+        image5.set_from_pixbuf(pisxbuf5)
+        cell_five = Cell("Mostovoi", image5)
         
         #Añadiendo las celdas
         self.flowbox.add(cell_one)
