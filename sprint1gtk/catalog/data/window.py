@@ -2,7 +2,7 @@ import gi
 gi.require_version ("Gtk", "3.0")
 from gi.repository import Gtk
 from cell import Cell
-
+from gi.repository import GdkPixbuf
 class MainWindow ( Gtk.Window ) :
     flowbox = Gtk.FlowBox()
     
@@ -23,12 +23,30 @@ class MainWindow ( Gtk.Window ) :
         scrolled.add (self.flowbox)
         self.add (scrolled)
         
-        cell_one = Cell("Iago Aspas" , Gtk.Image.new_from_file("C:/msys64.2/home/mario/Dise-o-de-Interfaces/sprint1gtk/catalog/data/edited/aspas.jpg"))
-        cell_two = Cell("Gabri Veiga" , Gtk.Image.new_from_file("C:/msys64.2/home/mario/Dise-o-de-Interfaces/sprint1gtk/catalog/data/edited/gabri veiga.jpg" ))
-        cell_three = Cell("Guidetti y Wass" , Gtk.Image.new_from_file("C:/msys64.2/home/mario/Dise-o-de-Interfaces/sprint1gtk/catalog/data/edited/guidetti wass.jpg" ))
-        cell_four = Cell("Strand Larsen", Gtk.Image.new_from_file("C:/msys64.2/home/mario/Dise-o-de-Interfaces/sprint1gtk/catalog/data/edited/larsen.jpeg"))
-        cell_five = Cell("Mostovoi", Gtk.Image.new_from_file("C:/msys64.2/home/mario/Dise-o-de-Interfaces/sprint1gtk/catalog/data/edited/mostovoi.jpg"))
         
+        image = Gtk.Image()
+
+        #Reescalado de las imagenes
+        pisxbuf1 = GdkPixbuf.Pixbuf.new_from_file_at_scale("C:/msys64.2/home/mario/Dise-o-de-Interfaces/sprint1gtk/catalog/data/unedited/aspas.jpg", 200, 200, False)
+        pisxbuf2 = GdkPixbuf.Pixbuf.new_from_file_at_scale("C:/msys64.2/home/mario/Dise-o-de-Interfaces/sprint1gtk/catalog/data/unedited/gabri veiga.jpg", 200, 200, False)
+        pisxbuf3 = GdkPixbuf.Pixbuf.new_from_file_at_scale("C:/msys64.2/home/mario/Dise-o-de-Interfaces/sprint1gtk/catalog/data/unedited/guidetti wass.jpg", 200, 200, False)
+        pisxbuf4 = GdkPixbuf.Pixbuf.new_from_file_at_scale("C:/msys64.2/home/mario/Dise-o-de-Interfaces/sprint1gtk/catalog/data/unedited/larsen.jpeg", 200, 200, False)
+        pisxbuf5 = GdkPixbuf.Pixbuf.new_from_file_at_scale("C:/msys64.2/home/mario/Dise-o-de-Interfaces/sprint1gtk/catalog/data/unedited/mostovoi.jpg", 200, 200, False)
+        
+        
+        #Una celda para cada imagen
+        image.set_from_pixbuf(pisxbuf1)
+        cell_one = Cell("Iago Aspas" , image)
+        image.set_from_pixbuf(pisxbuf2)
+        cell_two = Cell("Gabri Veiga", image)
+        image.set_from_pixbuf(pisxbuf3)
+        cell_three = Cell("Guidetti y Wass" , image)
+        image.set_from_pixbuf(pisxbuf4)
+        cell_four = Cell("Strand Larsen", image)
+        image.set_from_pixbuf(pisxbuf5)
+        cell_five = Cell("Mostovoi", image)
+        
+        #Añadiendo las celdas
         self.flowbox.add(cell_one)
         self.flowbox.add(cell_two)
         self.flowbox.add(cell_three)
