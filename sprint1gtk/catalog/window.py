@@ -29,6 +29,7 @@ class MainWindow ( Gtk.Window ) :
         image3 = Gtk.Image()
         image4 = Gtk.Image()
         image5 = Gtk.Image()
+        
         #Reescalado de las imagenes
         pisxbuf1 = GdkPixbuf.Pixbuf.new_from_file_at_scale("C:/msys64.2/home/mario/Dise-o-de-Interfaces/sprint1gtk/catalog/data/unedited/aspas.jpg", 200, 200, False)
         pisxbuf2 = GdkPixbuf.Pixbuf.new_from_file_at_scale("C:/msys64.2/home/mario/Dise-o-de-Interfaces/sprint1gtk/catalog/data/unedited/gabri veiga.jpg", 200, 200, False)
