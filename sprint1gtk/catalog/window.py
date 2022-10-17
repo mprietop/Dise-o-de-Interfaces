@@ -3,27 +3,31 @@ gi.require_version ("Gtk", "3.0")
 from gi.repository import Gtk
 from cell import Cell
 from gi.repository import GdkPixbuf
-class MainWindow ( Gtk.Window ) :
+
+class MainWindow (Gtk.Window) :
     flowbox = Gtk.FlowBox()
     
     def __init__(self):
+        #dándole titulo, que se pueda cerrar así como el borde y el tamaño inicial
         super().__init__ ( title = "Fotos")
         self.connect ("destroy" , Gtk.main_quit)
-        self.set_border_width ( 5)
+        self.set_border_width (15)
         self.set_default_size (400 , 400)
         
         header = Gtk.HeaderBar (title = "Celta")
         header.set_subtitle ("Mix")
         header.props.show_close_button = True
         
-        self.set_titlebar (header)
+        self.set_titlebar(header)
         
-        scrolled = Gtk . ScrolledWindow()
-        scrolled.set_policy (Gtk.PolicyType.NEVER , Gtk . PolicyType . AUTOMATIC)
-        scrolled.add (self.flowbox)
-        self.add (scrolled)
+        #configuración para que se pueda hacer scroll
+        scrolled = Gtk.ScrolledWindow()
+        scrolled.set_policy(Gtk.PolicyType.NEVER , Gtk.PolicyType.AUTOMATIC)
+        scrolled.add(self.flowbox)
+        self.add(scrolled)
         
         
+        #inicializando las imágenes
         image = Gtk.Image()
         image2 = Gtk.Image()
         image3 = Gtk.Image()
