@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Iago Aspas",
+    "description": "Foto de Iago Aspas(2022)",
+    "image_url": "https://raw.githubusercontent.com/mprietop/Dise-o-de-Interfaces/main/API-REST/aspas.jpg"
+  },
+  {
+    "name": "Gabri Veiga",
+    "description": "Foto del canterano Gabri Veiga(2022)",
+    "image_url": "https://raw.githubusercontent.com/mprietop/Dise-o-de-Interfaces/main/API-REST/gabri%20veiga.jpg"
+  },
+  {
+    "name": "Guidetti y Wass",
+    "description": "Foto de Guidetti y Wass en un partido de Europa League",
+    "image_url": "https://raw.githubusercontent.com/mprietop/Dise-o-de-Interfaces/main/API-REST/guidetti%20wass.jpg"
+  },
+  {
+    "name": "Larsen",
+    "description": "Foto del noruego Strand Larsen(2022)",
+    "image_url": "https://raw.githubusercontent.com/mprietop/Dise-o-de-Interfaces/main/API-REST/larsen.jpeg"
+  },
+  {
+    "name": "Mostovoi",
+    "description": "Foto del jugador Ruso Alexander Mostovoi",
+    "image_url": "https://raw.githubusercontent.com/mprietop/Dise-o-de-Interfaces/main/API-REST/mostovoi.jpg"
+  }
+]
