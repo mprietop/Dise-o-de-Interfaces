@@ -5,15 +5,11 @@ from gi.repository import GdkPixbuf
 from detail_window import DetailWindow
 
 class Cell(Gtk.EventBox):
-    name = None
-    image=None
-    titulo=None
-    label2=None
     
     def __init__(self, name, image):
         super().__init__()
         self.name = name
-        self.label2 = Gtk.Label("Foto de ", self.name)
+        self.label2 = Gtk.Label("Foto de "+self.name)
         box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=4)
         box.pack_start(Gtk.Label(label=name), False, False, 0)
         box.pack_start(image, True, True, 0)
@@ -22,7 +18,7 @@ class Cell(Gtk.EventBox):
         
     def on_click(self, widget, event):
         image = self.asignar_imagen(self.name)
-        dwin= DetailWindow(image, self.titulo, self.label2)
+        dwin= DetailWindow(image, self.name, self.label2)
         dwin.show_all()
 
     def asignar_imagen(self, name):
