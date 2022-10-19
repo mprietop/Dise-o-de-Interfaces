@@ -13,7 +13,7 @@ class Cell(Gtk.EventBox):
     def __init__(self, name, image):
         super().__init__()
         self.name = name
-        self.label2 = Gtk.Label("Foto de ", self.name)
+        self.label2 = Gtk.Label("Foto de " + self.name)
         box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=4)
         box.pack_start(Gtk.Label(label=name), False, False, 0)
         box.pack_start(image, True, True, 0)
