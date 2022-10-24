@@ -21,6 +21,8 @@ class Cell(Gtk.EventBox):
         dwin= DetailWindow(image, self.name, self.label2)
         dwin.show_all()
 
+
+    #Función para que mediante el nombre de la imagen cree un pixbuf con la imagen del JSON y retorne el pixbuf escalado
     def asignar_imagen(self, name):
             image = Gtk.Image()
             pixbuf = None
@@ -33,7 +35,7 @@ class Cell(Gtk.EventBox):
             elif name == "Guidetti y Wass":
                 pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_scale("C:/msys64.2/home/mario/Dise-o-de-Interfaces/sprint1gtk/catalog/data/unedited/guidetti wass.jpg", 200, 200, False)
 
-            elif name == "Strand Larsen":
+            elif name == "Larsen":
                 pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_scale("C:/msys64.2/home/mario/Dise-o-de-Interfaces/sprint1gtk/catalog/data/unedited/larsen.jpeg", 200, 200, False)
 
             else:

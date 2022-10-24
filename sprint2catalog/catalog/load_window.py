@@ -45,8 +45,8 @@ class LoadWindow(Gtk.Window):
             r = requests.get(image_url, stream=True)
             with open("temp.png","wb") as f:
                 shutil.copyfileobj(r.raw, f)
-            image = Gtk.Image.new_from_file( "temp.png" )
-            result.append({"name": name,"description": description, "gtk_image": image})
+            image = Gtk.Image.new_from_file("temp.png")
+            result.append({"name": name, "description": description, "gtk_image": image})
 
         GLib.idle_add(self.start_main_window, result)
         
