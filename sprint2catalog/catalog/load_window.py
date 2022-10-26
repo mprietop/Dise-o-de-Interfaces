@@ -16,7 +16,9 @@ class LoadWindow(Gtk.Window):
         self.set_border_width(60)
         self.set_resizable(False)
         self.spinner.props.active = True
+        self.set_position(Gtk.WindowPosition.CENTER)
         
+        #Creacion de una box con un spinner y un label descriptivo
         self.box.pack_start(self.label, False, False, 0)
         self.box.pack_start(self.spinner, False, False, 0)
         self.add(self.box)
@@ -32,6 +34,7 @@ class LoadWindow(Gtk.Window):
         thread = threading.Thread(target=self.load_json, args=())
         thread.start()
         
+    #Funcion para extraer del catalog.json los nombres, descripciones y urls de imagenes y crea una imagen temporal para ser usada
     def load_json(self):
         response = requests.get("https://raw.githubusercontent.com/mprietop/Dise-o-de-Interfaces/main/API-REST/catalog.json")
         json_list = response.json()
