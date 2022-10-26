@@ -5,11 +5,11 @@ from detail_window import DetailWindow
 
 class Cell(Gtk.EventBox):
     
-    def __init__(self, name, label, image):
+    def __init__(self, name, description, image):
         super().__init__()
         self.name = name
+        self.description = description
         self.image = image
-        self.label = label
         
         #Creo la box con la imagen y un label(nombre)
         box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=4)
@@ -23,7 +23,8 @@ class Cell(Gtk.EventBox):
         image = Gtk.Image()
         image.set_from_pixbuf(self.image.get_pixbuf())
         
-        label = Gtk.Label(label=self.label)
-        dwin= DetailWindow(image, self.name, label)
+        name = Gtk.Label(label=self.name)
+        description = Gtk.Label(label=self.description)
+        dwin= DetailWindow(image, name, description, self.name)
         dwin.show_all()
         

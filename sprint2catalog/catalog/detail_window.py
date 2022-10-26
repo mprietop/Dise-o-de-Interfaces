@@ -5,8 +5,8 @@ from gi.repository import Gtk
 class DetailWindow(Gtk.Window):
     
     #Una ventana con una box que coge la imagen y el label y lo muestra en una nueva ventana
-    def __init__(self, image, titulo, label):
-        super().__init__(title=titulo)
+    def __init__(self, image, name, description, title):
+        super().__init__(title=title)
         
         box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         
@@ -16,6 +16,8 @@ class DetailWindow(Gtk.Window):
 
         box.pack_start(image, True, True, 0)
 
-        box.pack_start(label, True, True, 0)
+        box.pack_start(name, True, True, 0)
+
+        box.pack_start(description, True, True, 0)
 
         self.add(box)
