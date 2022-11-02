@@ -6,4 +6,3 @@ def inversa(cadena):
     return invertida
 
 
-print(inversa('Mario'))
