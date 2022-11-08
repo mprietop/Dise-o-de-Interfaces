@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.30"
+        app:layout_constraintHorizontal_bias="0.20"
         app:layout_constraintVertical_bias="0.10"/>
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintVertical_bias="0.30"
         app:layout_constraintTop_toBottomOf="@+id/tipoPrenda"
         app:shapeAppearanceOverlay="@style/circleImageView"
@@ -36,8 +36,8 @@
 
     <TextView
         android:id="@+id/productDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
         android:text="Sudadera básica negra con capucha.\nEn colores negro y rojo."
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +57,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/productDescription"
-        app:layout_constraintHorizontal_bias="0.80"
+        app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintVertical_bias="0.40"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
