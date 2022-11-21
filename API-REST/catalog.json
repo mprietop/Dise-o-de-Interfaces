@@ -26,12 +26,12 @@
   },
   {
     "name": "Catanha",
-    "description": "Foto del jugador Brasileño del Celta Catanha"
+    "description": "Foto del jugador Brasileño del Celta Catanha",
     "image_url": "https://raw.githubusercontent.com/mprietop/Dise-o-de-Interfaces/main/API-REST/catanha.jpg"
   },
   {
     "name": "Milosevic",
-    "description": "Foto del jugador cedido al Celta, Savo Milosevic"
+    "description": "Foto del jugador cedido al Celta, Savo Milosevic",
     "image_url": "https://raw.githubusercontent.com/mprietop/Dise-o-de-Interfaces/main/API-REST/milosevic.jpg"
   }
 ]
