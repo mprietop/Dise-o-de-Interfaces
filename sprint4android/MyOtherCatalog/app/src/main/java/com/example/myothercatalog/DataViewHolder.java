@@ -2,9 +2,11 @@ package com.example.myothercatalog;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,11 +22,21 @@ import java.net.URL;
 public class DataViewHolder extends RecyclerView.ViewHolder {
     TextView nameTextview;
     ImageView imageView;
+    Button button;
 
     public DataViewHolder(@NonNull View itemView) {
         super(itemView);
         nameTextview = itemView.findViewById(R.id.name);
         imageView = itemView.findViewById(R.id.image);
+        button = itemView.findViewById(R.id.button);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(itemView.getContext(), DetailActiviy.class);
+                itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     public void showData(Futbolista futbolista, Activity activity) {

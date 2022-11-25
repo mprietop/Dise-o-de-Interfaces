@@ -17,6 +17,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RequestQueue queue;
     private Context context = this;
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         getData();
+        //button = findViewById(R.id.button);
+
     }
 
     public void getData() {
