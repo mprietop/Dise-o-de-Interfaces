@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -23,6 +25,7 @@ public class DataViewHolder extends RecyclerView.ViewHolder {
     TextView nameTextview;
     ImageView imageView;
     Button button;
+    Futbolista data;
 
     public DataViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -34,6 +37,9 @@ public class DataViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(itemView.getContext(), DetailActiviy.class);
+                intent.putExtra("name", data.getName());
+                intent.putExtra("desciption", data.getDescription());
+                intent.putExtra("imageUrl", data.getImageUrl());
                 itemView.getContext().startActivity(intent);
             }
         });
@@ -42,6 +48,7 @@ public class DataViewHolder extends RecyclerView.ViewHolder {
     public void showData(Futbolista futbolista, Activity activity) {
         nameTextview.setText(futbolista.getName());
         loadImage(futbolista.getImageUrl(), activity);
+        this.data = futbolista;
     }
 
     private Bitmap getBitMapFromUrl(String url) {
@@ -71,4 +78,6 @@ public class DataViewHolder extends RecyclerView.ViewHolder {
         });
         thread.start();
     }
+
+
 }
