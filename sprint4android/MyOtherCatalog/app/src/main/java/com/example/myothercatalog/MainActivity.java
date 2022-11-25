@@ -16,6 +16,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -35,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        queue = Volley.newRequestQueue(this);
-
         recyclerView = findViewById(R.id.recyclerView);
         getData();
     }
@@ -55,26 +54,28 @@ public class MainActivity extends AppCompatActivity {
                             for(int i = 0; i < response.length(); i++){
                                 JSONObject object = response.getJSONObject(i);
                                 Futbolista futbolista = new Futbolista(object);
+                                //Log.i("datos", futbolista.getName());
                                 lista.add(futbolista);
                             }
-
+                            DataAdapter dataAdapter = new DataAdapter(lista, activity);
+                            recyclerView.setAdapter(dataAdapter);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        DataAdapter dataAdapter = new DataAdapter(lista, activity);
+
                         recyclerView.setHasFixedSize(true);
                         recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                        recyclerView.setAdapter(dataAdapter);
+
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        Toast.makeText(activity, "Error accediendo a la API", Toast.LENGTH_SHORT).show();
                     }
                 }
         );
-        RequestQueue cola = Volley.newRequestQueue(context);
-        cola.add(request);
+        queue = Volley.newRequestQueue(context);
+        queue.add(request);
     }
 }
